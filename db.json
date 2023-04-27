@@ -1,4 +1,18 @@
 {
+  "users": [
+    {
+      "username": "user1",
+      "email": "user1@email.com",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "username": "user2",
+      "email": "user2@email.com",
+      "password": "1234567899",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,
@@ -15,13 +29,6 @@
   ],
   "profile": {
     "name": "typicode"
-  },
-  "users": [
-    {
-      "name": "vasavi",
-      "email": "vasavi@gmail.com",
-      "password": "837435",
-      "id": 1
-    }
-  ]
+  }
+ 
 }
