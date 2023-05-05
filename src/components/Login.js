@@ -3,6 +3,7 @@ import React from "react"
 import Card from "./Card"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import { FaFacebookSquare,FaGoogle,FaTwitter} from "react-icons/fa"
 const Login =() => {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
@@ -39,10 +40,10 @@ const Login =() => {
                 <form className="form-container">
                 <h1 className="title">Log-in</h1>
                     <label>
-                        <input style={{width:"50%"}} type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
+                        <input className="login-input" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
                     </label>
                     <label>
-                        <input style={{width:"50%",padding:"10px"}} type="password" placeholder="password"  valu={password} onChange={(e) => setPassword(e.target.value)}></input>
+                        <input className="login-input" type="password" placeholder="password"  valu={password} onChange={(e) => setPassword(e.target.value)}></input>
                     </label>
                     <button className="login-btn" type="submit" onClick={handleSubmit} style={{width:"40%"}}><p className="text">Log-in</p></button>
                 </form>
@@ -50,7 +51,11 @@ const Login =() => {
             <div className="text1">
                 <div>
                     <p>Or Sign Up Using</p>
-                    <p>Sign Up</p>
+                <div>
+                    <FaFacebookSquare className="icon"> </FaFacebookSquare>
+                    <FaGoogle className="icon"></FaGoogle>
+                    <FaTwitter className="icon"></FaTwitter>
+                </div>
                 </div>
              </div>
         </Card>
