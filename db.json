@@ -15,5 +15,13 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "users": [
+    {
+      "name": "vasavi",
+      "email": "vasavi@gmail.com",
+      "password": "837435",
+      "id": 1
+    }
+  ]
 }
