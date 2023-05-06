@@ -12,6 +12,7 @@
       "password": "1234567899",
       "id": 2
     }
+    
   ],
   "posts": [
     {
@@ -30,5 +31,4 @@
   "profile": {
     "name": "typicode"
   }
- 
 }
