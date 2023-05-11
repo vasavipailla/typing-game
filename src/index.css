@@ -202,3 +202,22 @@ button {
   background: none;
   text-decoration: underline;
 }
+.game-container{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(139, 105, 61);
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  
+}
+.game-container2{
+  background-color: blanchedalmond;
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 15px;
+
+}
