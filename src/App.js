@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
+import Game from "./components/Game";
 
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
               <Route path="/Login"  element={<Login/>}/>
               <Route path="/"  element= {<Home />} />
               <Route path="/register"  element= {<Register />} />
+              <Route path="/game"  element= {<Game />} />
+
             </Routes>
           </div>  
     </BrowserRouter>
