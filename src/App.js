@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Login from "./components/Login";
 import Home from "./components/Home";
 import Register from "./components/Register";
-
+import Score from "./components/Score";
 
 function App() {
   return (
@@ -18,6 +18,9 @@ function App() {
               <Route path="/register"  element= {<Register />} />
             </Routes>
           </div>  
+          <div>
+            <Score/>
+          </div>
     </BrowserRouter>
   );
 }
