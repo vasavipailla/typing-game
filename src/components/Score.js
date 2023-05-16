@@ -16,8 +16,8 @@ const Score = () =>{
 
     return(
         <div>
-          <label> <input type="test" value={inputValue} onChange={(e)=> setInputValue(e.target.value)}/></label>
-          <button onClick={handleSubmit}>submit</button>
+          {/* <label> <input type="test" value={inputValue} onChange={(e)=> setInputValue(e.target.value)}/></label>
+          <button onClick={handleSubmit}>submit</button> */}
           
             <p>Score:{score}</p>
         </div>
