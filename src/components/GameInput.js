@@ -1,9 +1,7 @@
-import { useState } from "react"
+import { useState } from "react";
 
-
-const GameInput =({getRandomword ,setwords}) => {
-     
-  const[userinput,setUserInput] = useState("")
+const GameInput = ({ handleSubmit, userinput, handleChange }) => {
+  /* const[userinput,setUserInput] = useState("")
   // const getRandomword = props.getRandomword()
     console.log(userinput);
    
@@ -24,23 +22,22 @@ const GameInput =({getRandomword ,setwords}) => {
 //   useEffect(() =>{
 //     handelInputChange();
 //  },[]);
-
+ */
   return (
-   
     <div>
-      <form  onSubmit= {handelInputChange}> 
-      <input
-      type="text"
-      autoFocus
-      placeholder="Type the word"
-      value={userinput}
-       onChange={(e) => setUserInput (e.target.value)}
-      //  onClick={ ()=> {getRandomword (handelInputChange)} }
-      />
-       </form> 
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          autoFocus
+          placeholder="Type the word"
+          value={userinput}
+          onChange={handleChange}
+          //  onClick={ ()=> {getRandomword (handelInputChange)} }
+        />
+      </form>
       {/* <button onClick={ ()=> handelInputChange()  }> add</button> */}
     </div>
-  )
-}
+  );
+};
 
-export default GameInput
+export default GameInput;
