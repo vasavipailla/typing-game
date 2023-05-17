@@ -1,44 +1,44 @@
-import { useState } from "react"
 
 
-const GameInput =({getRandomword ,setwords}) => {
+
+const GameInput =({handelSubmit,userinput,handelChange}) => {
      
-  const[userinput,setUserInput] = useState("")
-  // const getRandomword = props.getRandomword()
-    console.log(userinput);
+//   const[userinput,setUserInput] = useState("")
+//   // const getRandomword = props.getRandomword()
+//     console.log(userinput);
    
-  const handelInputChange = (e) =>{
-    e.preventDefault();
-      setUserInput (userinput );
+//   const handelInputChange = (e) =>{
+//     e.preventDefault();
+//       setUserInput (userinput );
    
-      if (userinput === setwords){
+//       if (userinput === setwords){
 
-        setUserInput("");
-        getRandomword();
+//         setUserInput("");
+//         getRandomword();
       
-       // randomword( Math.floor(Math.random() * data.length));
-       // props.getData(userinput)
-      } else (alert ("Please try again"))
+//        // randomword( Math.floor(Math.random() * data.length));
+//        // props.getData(userinput)
+//       } else (alert ("Please try again"))
   
-  };
-//   useEffect(() =>{
-//     handelInputChange();
-//  },[]);
+//   };
+// //   useEffect(() =>{
+// //     handelInputChange();
+// //  },[]);
 
   return (
    
     <div>
-      <form  onSubmit= {handelInputChange}> 
+      <form  onSubmit= {handelSubmit}> 
       <input
       type="text"
       autoFocus
       placeholder="Type the word"
       value={userinput}
-       onChange={(e) => setUserInput (e.target.value)}
+       onChange={handelChange}
       //  onClick={ ()=> {getRandomword (handelInputChange)} }
       />
        </form> 
-      {/* <button onClick={ ()=> handelInputChange()  }> add</button> */}
+     
     </div>
   )
 }

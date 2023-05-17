@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 const Header = () => {
     return (
-       <body>
+      
         <header>
         <nav>
             <div className="nav_bar">
@@ -17,7 +17,7 @@ const Header = () => {
             </div>
         </nav>
       </header>
-      </body>
+     
     );
 }
 

@@ -3,6 +3,8 @@ import GameInput from "./GameInput";
 
  const Game = () => {
    const [words,setWords] = useState([])
+   const[userinput,setUserInput] = useState("")
+    console.log(userinput);
   
    
 
@@ -12,13 +14,33 @@ import GameInput from "./GameInput";
      .then(data => {
         let randomword = Math.floor(Math.random() * data.length);
          setWords(data[randomword]);
-        //  console.log(randomword);
+        //  console.log(setWords);
      });
     };
    
     useEffect(() =>{
        getRandomword();
      },[]);
+
+     const handleSubmit = (e) => {
+
+      e.preventDefault()
+        const  insertedword = userinput.trim();
+        console.log(insertedword);
+        const  newword = getRandomword();
+
+      // console.log(handleSubmit);
+      
+
+      if (insertedword === newword) {
+
+        setUserInput("")
+        getRandomword()
+
+      }else (alert ("Please try again"))
+
+
+     }
    
   return (
    <>
@@ -36,7 +58,11 @@ import GameInput from "./GameInput";
             onClick={getRandomword}
             />  */}
 
-              <GameInput  getRandomword={getRandomword}  setwords= {setWords} /> 
+              <GameInput  
+               handleSubmit ={handleSubmit}
+               userinput={userinput}
+               handelChange={(e) => setUserInput(e.target.value)}
+              /> 
             <p>score:<span>0</span></p>
             <p>Time Left:<span>0</span></p>
            
