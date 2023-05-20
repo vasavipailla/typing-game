@@ -3,8 +3,8 @@ import GameInput from "./GameInput";
 
  const Game = () => {
    const [words,setWords] = useState([])
-   const[userinput,setUserInput] = useState("")
-    console.log(userinput);
+  //  const[userinput,setUserInput] = useState("")
+    //  console.log(userinput);
   
    
 
@@ -14,33 +14,26 @@ import GameInput from "./GameInput";
      .then(data => {
         let randomword = Math.floor(Math.random() * data.length);
          setWords(data[randomword]);
-        //  console.log(setWords);
+          console.log(setWords);
      });
     };
    
-    useEffect(() =>{
-       getRandomword();
+     useEffect(() =>{
+        getRandomword();
+        
      },[]);
 
-     const handleSubmit = (e) => {
-
-      e.preventDefault()
-        const  insertedword = userinput.trim();
-        console.log(insertedword);
-        const  newword = getRandomword();
-
-      // console.log(handleSubmit);
-      
-
-      if (insertedword === newword) {
-
-        setUserInput("")
-        getRandomword()
-
-      }else (alert ("Please try again"))
-
-
-     }
+   
+    //  const handleSubmit = (e) => {
+    //     e.preventDefault()
+    //      const  insertedword = userinput.trim();
+    //      const  newword = words;
+    //    if (insertedword === newword ) {
+    //     setUserInput("")
+    //      getRandomword()
+    //    }else (alert ("Please try again"))
+    
+    //  }
    
   return (
    <>
@@ -59,9 +52,11 @@ import GameInput from "./GameInput";
             />  */}
 
               <GameInput  
-               handleSubmit ={handleSubmit}
-               userinput={userinput}
-               handelChange={(e) => setUserInput(e.target.value)}
+              getRandomword={getRandomword} words = {words}
+              //  handleSubmit ={handleSubmit}
+              //  userinput={userinput}
+              //  handelChange={(e) => setUserInput(e.target.value)}
+
               /> 
             <p>score:<span>0</span></p>
             <p>Time Left:<span>0</span></p>
