@@ -1,10 +1,6 @@
 import {Link} from "react-router-dom"
 const Header = () => {
     return (
-<<<<<<< HEAD
-      
-=======
->>>>>>> bce8d58 (time component is done)
         <header>
         <nav>
             <div className="nav_bar">
@@ -20,10 +16,6 @@ const Header = () => {
             </div>
         </nav>
       </header>
-<<<<<<< HEAD
-     
-=======
->>>>>>> bce8d58 (time component is done)
     );
 }
 

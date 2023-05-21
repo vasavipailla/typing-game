@@ -1,9 +1,24 @@
 import { useState } from "react";
 
 
-  const GameInput =({getRandomword, words, updateScore, toggleColor}) => {
-  const[userinput,setUserInput] = useState("")
 
+const GameInput =({getRandomword, words, updateScore}) => {
+  const[userinput,setUserInput] = useState("")
+  const [color, setColor] = useState("black");
+
+  const mystyle = {
+    fontSize: 16,
+    color: color,
+  };
+
+  const toggleColor = (c) => {
+    console.log("toggleColor called")
+    setColor(c)
+    setTimeout(() => {
+      setUserInput("");
+      setColor("black")
+    }, 500);
+  }
 
   const handleSubmit = (e) => {
         e.preventDefault()
@@ -11,8 +26,7 @@ import { useState } from "react";
         const  newWord = {words};
      if (insertedWord === newWord.words) {
          toggleColor("green")
-         updateScore();
-         setUserInput("")      
+         updateScore();      
       } else {
         toggleColor("red")
       }
@@ -24,6 +38,7 @@ import { useState } from "react";
     <div>
       <form  onSubmit= {handleSubmit}> 
         <input
+        style={mystyle}
         type="text"
         autoFocus
         placeholder="Type the word"

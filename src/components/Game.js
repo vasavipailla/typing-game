@@ -1,18 +1,13 @@
 import { useState,useEffect } from "react";
 import Score from "./Score.js"
 import Time from "./Time.js";
+import GameInput from "./GameInput";
+
  const Game = () => {
    const [words,setWords] = useState([])
    let [score,setScore] = useState(0);
-   const [color, setColor] = useState("black");
-   const [userInput, setUserInput] = useState("");
    const [wordTimeLeft, setWordTimeLeft] = useState(10);
    const [gameTimeLeft, setGameTimeLeft] = useState(60);
-
-   const mystyle = {
-    fontSize: 16,
-    color: color,
-  };
 
    const getRandomword = () => {
     fetch("https://random-word-api.herokuapp.com/all")
@@ -31,13 +26,7 @@ import Time from "./Time.js";
     setScore(previousScore);
   };
 
-  const toggleColor = (c) => {
-    setColor(c)
-    setTimeout(() => {
-      setUserInput("");
-      setColor("black")
-    }, 500);
-  }
+  
   
   
 
@@ -86,7 +75,7 @@ import Time from "./Time.js";
             <h3>Type The Following Word :</h3>
             <h1>  {words} </h1>
               <GameInput  
-              getRandomword={getRandomword} words={words} updateScore={updateScore} toggleColor={toggleColor}
+              getRandomword={getRandomword} words={words} updateScore={updateScore}
               /> 
             <Score  score={score}/>
             <Time timeLeft={wordTimeLeft} title={"WordTime"}/>
