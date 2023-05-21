@@ -1,7 +1,13 @@
 import { useState,useEffect } from "react";
+import Score from "./Score.js"
+import Time from "./Time.js";
+import GameInput from "./GameInput";
 
  const Game = () => {
    const [words,setWords] = useState([])
+   let [score,setScore] = useState(0);
+   const [wordTimeLeft, setWordTimeLeft] = useState(10);
+   const [gameTimeLeft, setGameTimeLeft] = useState(60);
 
    const getRandomword = () => {
     fetch("https://random-word-api.herokuapp.com/all")
@@ -9,14 +15,57 @@ import { useState,useEffect } from "react";
     .then(data => {
         let randomword = Math.floor(Math.random() * data.length);
         setWords(data[randomword]);
+        setWordTimeLeft(10)
+        console.log(setWords);
     });
    };
 
+  const updateScore = () => {
+    let previousScore = score
+    previousScore++ ;
+    setScore(previousScore);
+  };
+
+  
+  
+  
+
+  const handleWordTimeOut = () => {
+    getRandomword();
+  };
+
+  const handleGameTimeOut = () => {
+    alert("Timeout GameOver")
+     window.location.reload();
+  };
+
+
     useEffect(() =>{
-       getRandomword();
+        getRandomword();
     },[]);
+
+
+    useEffect(() => {
+      if (!wordTimeLeft) {
+         handleWordTimeOut()
+      }
+      const intervalId = setInterval(() => {
+        setWordTimeLeft(wordTimeLeft - 1);
+      }, 1000);
+      return () => clearInterval(intervalId);
+    }, [wordTimeLeft]);
    
-  return (
+    useEffect(() => {
+      if (!gameTimeLeft) {
+        handleGameTimeOut()
+      }
+      const intervalId = setInterval(() => {
+        setGameTimeLeft(gameTimeLeft - 1);
+      }, 1000);
+      return () => clearInterval(intervalId);
+    }, [gameTimeLeft]);
+ 
+    return (
    <>
    
    <h1>Wellcome To The Typing</h1>
@@ -25,20 +74,15 @@ import { useState,useEffect } from "react";
         <h2>Typing Game</h2>
             <h3>Type The Following Word :</h3>
             <h1>  {words} </h1>
-            <input
-            type="text"
-            autoFocus
-            placeholder="Type the word here"
-            onClick={getRandomword}
-            />
-            <p>score:<span>0</span></p>
-            <p>Time Left:<span>0</span></p>
-           
+              <GameInput  
+              getRandomword={getRandomword} words={words} updateScore={updateScore}
+              /> 
+            <Score  score={score}/>
+            <Time timeLeft={wordTimeLeft} title={"WordTime"}/>
+            <Time timeLeft={gameTimeLeft} title={"GameTime"}/> 
+          
         </div>
-
     </div>
-   
-
    </>
   )
 }
