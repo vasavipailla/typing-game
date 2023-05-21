@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-  const GameInput =({getRandomword ,words}) => {
+  const GameInput =({getRandomword, words, updateScore, toggleColor}) => {
   const[userinput,setUserInput] = useState("")
 
 
@@ -9,17 +9,15 @@ import { useState } from "react";
         e.preventDefault()
         const  insertedWord = userinput.trim();
         const  newWord = {words};
-       
      if (insertedWord === newWord.words) {
-         setUserInput("")
-         getRandomword()
-        //  console.log(insertedWord);
-        //  console.log(newWord);
-      
-      }else (alert ("Please try again"))
-      
+         toggleColor("green")
+         updateScore();
+         setUserInput("")      
+      } else {
+        toggleColor("red")
+      }
+      getRandomword()
   };
-
 
   return (
    
