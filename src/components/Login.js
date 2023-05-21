@@ -30,7 +30,7 @@ const Login =() => {
          })
 
          if(user.email === email && user.password === password){
-            navigate("/")
+            navigate("/Game")
          }
     }
     return(
