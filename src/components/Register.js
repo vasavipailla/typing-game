@@ -50,16 +50,16 @@ const Register = () => {
                  onChange={(e) => setEmail(e.target.value)}
                />
           
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">Password</label>
                <input
                  type="password"
-                 placeholder="password"
+                 placeholder="Password"
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}
                />
            
             <button  type="submit" onClick={handleSubmit}>
-                 <p>Register</p>
+                 <p className="rgstr-btn">Register</p>
             </button>
             <Link to = "/">
             <button  type="submit" className="btn-2" >

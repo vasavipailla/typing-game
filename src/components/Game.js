@@ -69,7 +69,7 @@ import GameInput from "./GameInput";
    <>
    
    <div className="game-container">
-   <h1 className="game">Wellcome To The Typing</h1>
+   <h1 className="gametitle">Welcome To The Typing Game</h1>
         <div className="game-container2">
         <h2 className="gametitle">Typing Game</h2>
            <h3>Type The Following Word :</h3>
@@ -80,11 +80,13 @@ import GameInput from "./GameInput";
             <div className="scorebox">
             <Score  score={score}/>
             </div>
-            <div className="wordtimebox">
-            <Time timeLeft={wordTimeLeft} title={"WordTime"}/>
-            </div>
-            <div className="gametimebox">
-            <Time timeLeft={gameTimeLeft} title={"GameTime"}/> 
+            <div className="time-container">
+              <div className="wordtimebox">
+              <Time timeLeft={wordTimeLeft} title={"WordTime"}/>
+              </div>
+              <div className="wordtimebox">
+              <Time timeLeft={gameTimeLeft} title={"GameTime"}/> 
+              </div>
             </div>
         </div>
     </div>
