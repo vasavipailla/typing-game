@@ -1,6 +1,6 @@
 const Score = ({score}) => {
     return(
-        <p>Score:{score}</p>
+        <p className="scoretitle">Score:{score}</p>
     )
 }
 

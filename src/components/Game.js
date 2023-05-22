@@ -68,19 +68,24 @@ import GameInput from "./GameInput";
     return (
    <>
    
-   <h1>Wellcome To The Typing</h1>
    <div className="game-container">
+   <h1 className="game">Wellcome To The Typing</h1>
         <div className="game-container2">
-        <h2>Typing Game</h2>
-            <h3>Type The Following Word :</h3>
-            <h1>  {words} </h1>
+        <h2 className="gametitle">Typing Game</h2>
+           <h3>Type The Following Word :</h3>
+            <h1 className="gametitle">  {words} </h1>
               <GameInput  
               getRandomword={getRandomword} words={words} updateScore={updateScore}
               /> 
+            <div className="scorebox">
             <Score  score={score}/>
+            </div>
+            <div className="wordtimebox">
             <Time timeLeft={wordTimeLeft} title={"WordTime"}/>
+            </div>
+            <div className="gametimebox">
             <Time timeLeft={gameTimeLeft} title={"GameTime"}/> 
-          
+            </div>
         </div>
     </div>
    </>
