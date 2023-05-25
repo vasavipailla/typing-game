@@ -1,28 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-body {
-  
-   /* background-color:beige;  */
-  /* width: 100%;
-  height: 100vh; */ 
-  /* background-color: rgb(133, 199, 199); */
-}
 
-.nav_bar {
-  max-width: 100%;
+.nav_bar { 
   display: flex;
   justify-content: flex-start;
   justify-content: space-around;
   align-items: center; 
-
+  background-color:rgb(22, 19, 19); 
 }
-
 
 .list  {
   display: flex;
   text-align: center;
   text-decoration: none;
    padding: 14px 16px; 
-}
+} 
 
 .list-item {
     display: inline;
@@ -33,9 +24,11 @@ body {
     line-height: 23px;
     letter-spacing: -0.346154px;
     text-decoration: none;
-    color:black;
+    color: white;
+}
 
-    /* color: #111111; */
+.list1{
+  color:white;
 }
 
 .list a{
@@ -49,7 +42,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   height: 100%;
 }
 
@@ -217,8 +209,8 @@ button:hover{
 .btn-2{
   background: none;
   text-decoration: underline;
-  
 }
+
 .game-container{
   width: 100vw;
   height: 100vh;

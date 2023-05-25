@@ -23,20 +23,24 @@ import Modal from "./Modal.js";
         console.log(setWords);
     });
    };
-
+  
+  
   const updateScore = () => {
     let previousScore = score
     previousScore++ ;
     setScore(previousScore);
   };
 
+  //as word time completed a new random word appears
   const handleWordTimeOut = () => {
     getRandomword();
   };
-
+  
+  //as game time completed is shows an alert as game over and reloads the page
   const handleGameTimeOut = () => {
-     alert("Timeout GameOver ")
-       window.location.reload();
+    alert("Timeout GameOver")
+    //it reloads the page
+    window.location.reload();
   };
 
     // to stop page mount when ever a new random word gets generate
@@ -46,19 +50,22 @@ import Modal from "./Modal.js";
 
 
     useEffect(() => {
-      if (!wordTimeLeft) {
-         handleWordTimeOut()
-      }
+       // exit early when we reach 0
+       if (!wordTimeLeft) {
+          handleWordTimeOut()
+       }
+      // save intervalId to clear the interval when the
+      // component re-renders
       const intervalId = setInterval(() => {
         setWordTimeLeft(wordTimeLeft - 1);
       }, 1000);
+      // clear interval on re-render to avoid memory leaks
       return () => clearInterval(intervalId);
     }, [wordTimeLeft]);
    
     useEffect(() => {
-      if (!gameTimeLeft) {
+       if (!gameTimeLeft) {
         handleGameTimeOut()
-         window.location.reload();
       }
       const intervalId = setInterval(() => {
         setGameTimeLeft(gameTimeLeft - 1);
@@ -92,6 +99,9 @@ import Modal from "./Modal.js";
         </div>
     </div>
    </>
-  )
-}
-export default Game;
+   )
+ }
+
+ export default Game;
+
+
