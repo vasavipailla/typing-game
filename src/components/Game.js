@@ -14,7 +14,7 @@ import Modal from "./Modal.js";
     //  A function to get random word from external open api.
    const getRandomword = () => {
     fetch("https://random-word-api.vercel.app/api?words=100")
-    // fetch("https://random-word-api.herokuapp.com/all")
+    //fetch("https://random-word-api.herokuapp.com/all")
     .then(res => res.json())
     .then(data => {
         let randomword = Math.floor(Math.random() * data.length);
