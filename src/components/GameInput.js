@@ -11,9 +11,11 @@ const GameInput =({getRandomword, words, updateScore}) => {
     color: color,
   };
 
+  //when this function invoked it changes the color of input text 
   const toggleColor = (c) => {
     console.log("toggleColor called")
     setColor(c)
+    //when the time out the input field is cleared and sets the color to black
     setTimeout(() => {
       setUserInput("");
       setColor("black")
@@ -25,10 +27,12 @@ const GameInput =({getRandomword, words, updateScore}) => {
         const  insertedWord = userinput.trim();
         const  newWord = {words};
      if (insertedWord === newWord.words) {
+         //it changes the color of input text to 'green' when input is equal to randomword
          toggleColor("green")
          updateScore();      
       } else {
         setOpenModal(true)
+        //it changes the color of input text to 'red' when input is not equal to randomword
         //  toggleColor("red")
         setUserInput("")
       }
@@ -36,7 +40,6 @@ const GameInput =({getRandomword, words, updateScore}) => {
   };
      
   return (
-    //  A modal is used to pop  up  a message if the users typed the wrong word 
     <div>
        {openmodal && <Modal close={setOpenModal} />}  
       <form  onSubmit= {handleSubmit}> 
@@ -53,5 +56,4 @@ const GameInput =({getRandomword, words, updateScore}) => {
     </div>
   )
 }
-
 export default GameInput
