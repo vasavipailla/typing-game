@@ -212,7 +212,7 @@ button:hover{
 }
 
 .game-container{
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
    background-image: linear-gradient(69deg,rgb(170, 170, 238),rgb(238, 129, 129) ,orange);  
