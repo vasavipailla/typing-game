@@ -86,7 +86,7 @@ import Modal from "./Modal.js";
    <div className="game-container">
       <h1 className="gametitle">Welcome To The Typing Game</h1>
         <div className="game-container2">
-          {openmodal && <Modal close={closeModel} />} 
+          {openmodal && <Modal close={closeModel} score={score} />} 
           <h3>Type The Following Word :</h3>
           <h1 className="gametitle">  {words} </h1>
           <GameInput  

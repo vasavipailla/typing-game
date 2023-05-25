@@ -31,8 +31,7 @@ const GameInput =({getRandomword, words, updateScore}) => {
          updateScore();      
       } else {
         //it changes the color of input text to 'red' when input is not equal to randomword
-        toggleColor("red")
-        setUserInput("")
+        toggleColor("red");
       }
       getRandomword()
   };
