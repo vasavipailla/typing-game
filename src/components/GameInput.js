@@ -4,7 +4,6 @@ import { useState } from "react";
 const GameInput =({getRandomword, words, updateScore}) => {
   const[userinput,setUserInput] = useState("")
   const [color, setColor] = useState("black");
-  const [openmodal,setOpenModal] = useState(false)
   
   const mystyle = {
     fontSize: 16,
@@ -31,17 +30,15 @@ const GameInput =({getRandomword, words, updateScore}) => {
          toggleColor("green")
          updateScore();      
       } else {
-        setOpenModal(true)
         //it changes the color of input text to 'red' when input is not equal to randomword
-        //  toggleColor("red")
+        toggleColor("red")
         setUserInput("")
       }
       getRandomword()
   };
      
   return (
-    <div>
-       {openmodal && <Modal close={setOpenModal} />}  
+    <div> 
       <form  onSubmit= {handleSubmit}> 
         <input 
         className="game-input"
