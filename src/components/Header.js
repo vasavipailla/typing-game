@@ -10,7 +10,7 @@ const Header = () => {
                 <div>
                 <ul className="list">
                     <li className="list-item"><Link to="/register">Sign-UP</Link></li>
-                    <li className="list-item"><Link to="/Login">Login-In</Link></li>
+                    <li className="list-item"><Link to="/login">Log-In</Link></li>
                 </ul>
                 </div>
             </div>

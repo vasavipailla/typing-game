@@ -1,11 +1,11 @@
 import { useState } from "react";
-
-
+ import Modal from "./Modal.js";
 
 const GameInput =({getRandomword, words, updateScore}) => {
   const[userinput,setUserInput] = useState("")
   const [color, setColor] = useState("black");
-
+  const [openmodal,setOpenModal] = useState(false)
+  
   const mystyle = {
     fontSize: 16,
     color: color,
@@ -19,7 +19,7 @@ const GameInput =({getRandomword, words, updateScore}) => {
       setColor("black")
     }, 500);
   }
-
+  //  A function to do clear  input feild if the user typed word is same as generated random word from api.
   const handleSubmit = (e) => {
         e.preventDefault()
         const  insertedWord = userinput.trim();
@@ -28,16 +28,20 @@ const GameInput =({getRandomword, words, updateScore}) => {
          toggleColor("green")
          updateScore();      
       } else {
-        toggleColor("red")
+        setOpenModal(true)
+        //  toggleColor("red")
+        setUserInput("")
       }
       getRandomword()
   };
-
+     
   return (
-   
+    //  A modal is used to pop  up  a message if the users typed the wrong word 
     <div>
+       {openmodal && <Modal close={setOpenModal} />}  
       <form  onSubmit= {handleSubmit}> 
-        <input
+        <input 
+        className="game-input"
         style={mystyle}
         type="text"
         autoFocus
@@ -46,7 +50,6 @@ const GameInput =({getRandomword, words, updateScore}) => {
         onChange={(e) => setUserInput(e.target.value)}
         />
       </form> 
-     
     </div>
   )
 }

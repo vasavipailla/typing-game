@@ -11,8 +11,13 @@
       "email": "user2@email.com",
       "password": "1234567899",
       "id": 2
+    },
+    {
+      "username": "",
+      "email": "",
+      "password": "",
+      "id": 3
     }
-    
   ],
   "posts": [
     {

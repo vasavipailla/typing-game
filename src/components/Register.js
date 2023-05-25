@@ -14,6 +14,9 @@ const Register = () => {
         if (user) return user;
     }
     const handleSubmit = async () => {
+         if( username=== "" ||email=== "" || password === ""){
+          alert("All filelds are required")
+      }
         const user = await axios
         .get("/users")
         .then((res) => checkEmail(res.data,email));
@@ -50,20 +53,20 @@ const Register = () => {
                  onChange={(e) => setEmail(e.target.value)}
                />
           
-            <label htmlFor="password">password</label>
+            <label htmlFor="password">Password</label>
                <input
                  type="password"
-                 placeholder="password"
+                 placeholder="Password"
                  value={password}
                  onChange={(e) => setPassword(e.target.value)}
                />
            
             <button  type="submit" onClick={handleSubmit}>
-                 <p>Register</p>
+                 <p className="rgstr-btn">Register</p>
             </button>
-            <Link to = "/">
+            <Link to = "/login">
             <button  type="submit" className="btn-2" >
-                 <p>Already have an account? Login here.</p>
+                 <h3 style={{color:"black"}}>Already have an account? Login here.</h3>
             </button>
             </Link>
           </form>

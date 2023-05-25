@@ -38,7 +38,7 @@ const Login =() => {
         <Card>
             <div>
                 <form className="form-container">
-                <h1 className="title">Log-in</h1>
+                <h1>Log-in</h1>
                     <label>
                         <input className="login-input" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} ></input>
                     </label>

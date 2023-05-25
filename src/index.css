@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 body {
-  background-color:beige;
+  
+   /* background-color:beige;  */
   /* width: 100%;
-  height: 100vh; */
-  /* background-image: linear-gradient(75deg ,rgb(114, 114, 184) rgb(141, 76, 76) rgb(231, 95, 117)); */
+  height: 100vh; */ 
   /* background-color: rgb(133, 199, 199); */
 }
 
@@ -13,7 +13,7 @@ body {
   justify-content: flex-start;
   justify-content: space-around;
   align-items: center; 
-  background-color:white;
+
 }
 
 
@@ -75,8 +75,11 @@ body {
   padding: 3rem;
   border-radius: 2.5em;
   margin-bottom: 1.3rem;
-  background-color:white; 
+  /* background-color:white;  */
   margin-left:50px;
+  background-color: aliceblue;
+  
+  box-shadow: rgba(14, 12, 12, 0.45)5px 5px 5px 10px;
 }
 
 .login-btn {
@@ -153,8 +156,8 @@ section {
   margin-left: 40%;
   padding: 10px;
   width: 15%;
-  color: rgb(15, 15, 15);
-  background-color: rgb(218, 186, 147);
+  color: white;
+  background-color: dodgerblue;
   border-radius: 10px;
   font-size: 20px;
   font-weight: 400;
@@ -162,20 +165,27 @@ section {
  
 }
 .btn-1:hover{
-  background-color: blue;
+  background-color:blue;
 }
 .img {
   margin-right: 40px;
 }
-.container-2, .R-form{
+.R-form{
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 20%;
   padding: 10px;
   justify-content: center;
   margin: auto;
   margin-top: 5%;
-  
+  background-color: aliceblue;
+  border-radius: 5px;
+  border-radius: 12px;
+  box-shadow: rgba(14, 12, 12, 0.45)5px 5px 5px 10px;
+}
+.rgstr-btn{
+  font-size: 20px;
+  font-weight: 300;
 }
 
 label {
@@ -185,39 +195,119 @@ label {
   font-weight: 400;
 }
 
-input {
+ input {
   margin: 0.5rem 0;
   padding: 10px;
-}
+  
+} 
 button {
   border: none;
-  background-color: bisque;
+  background-color:dodgerblue;
+  color: aliceblue;
   padding: 5px;
   border-radius: 10px;
   cursor: pointer;
   margin-top: 5%;
   text-align: center;
 }
+button:hover{
+  background-color: blue;
+}
+
 .btn-2{
   background: none;
   text-decoration: underline;
-}
-.game-container{
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(139, 105, 61);
-  justify-content: center;
-  align-items: center;
-  margin: auto;
   
 }
+.game-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+   background-image: linear-gradient(69deg,rgb(170, 170, 238),rgb(238, 129, 129) ,orange);  
+  /* background-color: #fff; */
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
 .game-container2{
-  background-color: blanchedalmond;
+  /* background-image: linear-gradient(69deg,rgb(170, 170, 238),rgb(238, 129, 129) ,orange);  */
+  background-color: #e9d3d3;
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: rgba(14, 12, 12, 0.45)5px 5px 5px 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column; 
+  text-align: center;
+  margin-top: 10px;
+  
+  
+}
+.gametitle{
+ font-size: 45px;
+ font-weight: 600;
+}
+
+.wordtimebox{
+  background-color:rgb(230, 182, 182);
+  display: flex;
+  width: 150px;
+  padding: 10px;
+  justify-content: center;
+  border: solid;
+  border-radius: 5px;
+  
+}
+
+.scoretitle{
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.time-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.game-input{
+  padding: 20px;
+  width: 250px;
+  border: solid;
+  border-radius: 12px;
+  box-shadow: rgba(8, 8, 8, 0.45)5px 5px 5px 10px;
+  background-color: rgb(235, 215, 219);
+}
+.timetitle{
+  font-size: 20px;
+  font-weight: 400;
+  
+}
+.modalcontainer{
+  background-color: rgb(61, 58, 58);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modalcontainer-1{
+  background-color: #fff;
   width: 500px;
   height: 300px;
-  margin: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
   text-align: center;
-  line-height: 15px;
-  font-size: 15px;
-
+}
+.modal-btn{
+  font-size: 16px;
+  font-weight: 200;
 }

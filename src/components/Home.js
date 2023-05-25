@@ -13,12 +13,10 @@ const Home = () => {
                 just press the button.</p>
                 
               
-               <Link to= "/Login">
+               <Link to= "/login">
                 <button className='btn-1'>Login</button>
                 </Link>
-                <Link to= "/game">
-                <button className='btn-1'>Game page</button>
-                </Link>
+            
             </section>
             <section>
               <img src = {photo1} className='img' alt= "typing hands" />
