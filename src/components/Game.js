@@ -38,10 +38,17 @@ import Modal from "./Modal.js";
   
   //as game time completed is shows an alert as game over and reloads the page
   const handleGameTimeOut = () => {
-    alert("Timeout GameOver")
-    //it reloads the page
-    window.location.reload();
+    setOpenModal(true)
   };
+
+  const closeModel = () => {
+    setOpenModal(false)
+
+    // reset state variable after game over
+    setGameTimeLeft(60)
+    setWordTimeLeft(10)
+    setScore(0)
+  }
 
     // to stop page mount when ever a new random word gets generate
     useEffect(() =>{
@@ -79,7 +86,7 @@ import Modal from "./Modal.js";
    <div className="game-container">
       <h1 className="gametitle">Welcome To The Typing Game</h1>
         <div className="game-container2">
-          {openmodal && <Modal close={setOpenModal} />} 
+          {openmodal && <Modal close={closeModel} />} 
           <h3>Type The Following Word :</h3>
           <h1 className="gametitle">  {words} </h1>
           <GameInput  
@@ -103,5 +110,3 @@ import Modal from "./Modal.js";
  }
 
  export default Game;
-
-

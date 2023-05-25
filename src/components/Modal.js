@@ -5,9 +5,9 @@ function Modal({close}) {
     <div className='modalcontainer'>
         <div className='modalcontainer-1'>
             {/* <button onClick={() => close(false)}>x</button> */}
-            <h1 className='info'>Sorry you typed wrong word </h1>
+            <h1 className='info'>Game Over</h1>
             <h2>want to continue  game click the button below </h2>
-             <button className='rsgtr-btn' onClick={() => close(false)}> <p className='modal-btn'>continue</p></button>
+             <button className='rsgtr-btn' onClick={() => close()}> <p className='modal-btn'>continue</p></button>
         </div>
      </div>
   )
