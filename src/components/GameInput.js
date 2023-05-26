@@ -29,7 +29,7 @@ const GameInput =({getRandomword, words, updateScore}) => {
          updateScore();      
       } else {
         setOpenModal(true)
-        //  toggleColor("red")
+        // toggleColor("red")
         setUserInput("")
       }
       getRandomword()
