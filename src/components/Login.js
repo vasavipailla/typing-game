@@ -59,6 +59,12 @@ const Login =() => {
                 </div>
              </div>
         </Card>
+        <h2>Use this Email and Password to login</h2>
+        <h3>
+        "Username": "user1",
+        "Email": "user1@email.com",
+        "Password": "12345678",
+        </h3>
     </div>
     )
 }
